@@ -1,0 +1,43 @@
+/*This file is part of opensmsvote.
+
+    Foobar is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Foobar is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with opensmsvote.  If not, see <http://www.gnu.org/licenses/>.*/
+/* 
+    Document   : main
+    Created on : 2012-feb-28, 16:39:31
+    Author     : samme
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+table
+{
+    margin-left:auto; 
+    margin-right:auto;
+    border-collapse:collapse;
+}
+table, th, td {
+    border: 2px solid black;
+}
+td,th {
+    text-align:center;
+    padding:15px;
+}
