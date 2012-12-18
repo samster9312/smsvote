@@ -16,20 +16,27 @@
 include '../config/include.php';
 $number = $_REQUEST['phone'];
 echo $number;
-$values = $_REQUEST['text'];
-$team = $values[strlen($values)-1];
-echo $values;
+$text = $_REQUEST['text'];
+$values = explode(' ', $text);
+$team = $values[1];
+$event = $values[0];
+echo $team;
+echo '<br>';
+echo $event;
 $list = "SELECT teamID FROM team WHERE value = '".$team."'";
 $result = mysql_query($list);
 $row = mysql_fetch_array($result);
-print_r($row);
+$list = "SELECT eventID FROM event WHERE identity = '".$event."'";
+$result2 = mysql_query($list);
+$row2 = mysql_fetch_array($result2);
+
+echo '<br>Team';
 $teamID = $row['teamID'];
 echo $teamID;
-if (strpos($values, "UV") !==false ) {
-echo "<br>Hej";
-$vote = "INSERT INTO votes VALUES ('', '".$number."', '".$teamID."', NOW())";
+$eventID = $row2['eventID'];
+echo '<br>';
+echo $eventID;
+$vote = "INSERT INTO votes VALUES ('', '".$number."', '".$teamID."', NOW(),'".$eventID."')";
 mysql_query($vote);
-} else {
-echo "FEL!";
-}
+
 ?>

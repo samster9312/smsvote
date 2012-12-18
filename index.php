@@ -15,11 +15,17 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 <?php
 require_once 'config/include.php';
-$query = "SELECT name, people, teamID FROM team";
-$query3 = "SELECT teamID FROM votes";
-$list = mysql_query($query);
+$event = $_REQUEST[event];
+$list = "SELECT eventID FROM event WHERE identity = '".$event."'";
+$result2 = mysql_query($list);
+$row2 = mysql_fetch_array($result2);
+$eventID = $row2[eventID];
+$query = "SELECT name, people, teamID FROM team WHERE eventID = ".$eventID;
+$query3 = "SELECT teamID FROM votes WHERE eventID = ".$eventID;
+$list2 = mysql_query($query);
 $vote = mysql_query($query3);
 $total = mysql_num_rows($vote);
+echo '<br>';
 echo '<table class="table">
     <tr>
     <th>L&aring;t</th>
@@ -27,9 +33,9 @@ echo '<table class="table">
     <th>Antal r&ouml;ster</th>
     <th>Andel av r&ouml;sterna</th>
     </tr>';
-while($row = mysql_fetch_array($list))
+while($row = mysql_fetch_array($list2))
   {
-    $query2 = "SELECT ID FROM votes WHERE teamID = ".$row['teamID'];
+    $query2 = "SELECT ID FROM votes WHERE eventID = '".$eventID."' AND teamID = '".$row['teamID']."' ";
     $result = mysql_query($query2);
     $num_rows = mysql_num_rows($result);
     $percent = ($num_rows/$total)*100;
