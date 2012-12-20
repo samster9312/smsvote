@@ -80,8 +80,6 @@ if($submit) {
     }
     echo '
         </table>
-        <P>
-        <table border=0 class="without">
         <form method="post" action="'.$PHP_SELF.'" id="form">
         ';
     if($id) {
@@ -101,10 +99,10 @@ if($submit) {
     }
     echo '
         
-        <tr><td class="without">Namn:</td><td class="without"><input type="text" name="name" id="name" value="'.$name.'" autofocus required/></td>
-        <tr><td class="without">Värde:</td><td class="without"><input type="text" name="value" id="value" value="'.$value.'" required/></td>
-        <tr><td class="without">Personer:</td><td class="without"><input type="date" name="people" id="people" value="'.$people.'"/></td>
-        <tr><td class="without">Event:</td><td class="without"><select name="eventID"';
+        <label>Namn:</label><input type="text" name="name" id="name" value="'.$name.'" autofocus required/>
+        <label>Värde:</label><input type="text" name="value" id="value" value="'.$value.'" required/>
+        <label>Personer:</label><input type="date" name="people" id="people" value="'.$people.'"/>
+        <label>Event:</label><select name="eventID"';
         while($nt=mysql_fetch_array($resEvent)){
             if ($row['eventID']==$nt[eventID])
             echo "<option value=$nt[eventID] selected>$nt[name]</option>";
@@ -112,11 +110,10 @@ if($submit) {
             echo "<option value=$nt[eventID]>$nt[name]</option>";
             }
         echo '
-        </td>
+        
 
-        <tr><td class="without"><input type="submit" name="submit" value="Enter"></td></tr>
+        <label><input type="submit" name="submit" value="Enter">
         </form>
-        </table>
         ';
 }
 

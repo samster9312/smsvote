@@ -12,31 +12,26 @@
 
     You should have received a copy of the GNU General Public License
     along with opensmsvote.  If not, see <http://www.gnu.org/licenses/>.-->
-<table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
-<tr>
+<html>
+    <head>
+        <LINK href="../style/login.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+
 <form name="login" method="post" action="validate.php">
-<td>
-<table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
-<tr>
-<td colspan="3"><strong>Inloggning </strong></td>
-</tr>
-<tr><input type="hidden" name="sida" value="<? echo $GET_[sida]; ?>">
-<td width="78">Anv&auml;ndare</td>
-<td width="6">:</td>
-<td width="294"><input name="user" type="text" id="user" required></td>
-</tr>
-<tr>
-<td>L&ouml;senord</td>
-<td>:</td>
-<td><input name="pass" type="password" id="pass" required></td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><input type="submit" name="Submit" value="Logga in"></td>
-</tr>
-</table>
-</td>
+
+<strong>Inloggning </strong>
+<br>
+<input type="hidden" name="sida" value="<? echo $GET_[sida]; ?>">
+<label>Anv&auml;ndare:</label>
+<input name="user" type="text" id="user" required autofocus>
+
+<label>L&ouml;senord:</label>
+<input name="pass" type="password" id="pass" required>
+
+<input type="submit" name="Submit" value="Logga in">
+
 </form>
-</tr>
-</table>
+
+</body>
+</html>

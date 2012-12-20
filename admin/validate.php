@@ -46,35 +46,8 @@ header("location:index.php");
 else {
     //If wrong password or user give a new opportunity to log in
 echo '
-<table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
-<tr>
-<form name="form1" method="post" action="validate.php">
-<tr><td colspan="2">Felaktig anv&auml;ndare eller l&ouml;senord</td></tr>
-<td>
-<table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
-<tr>
-<td colspan="3"><strong>Inloggning </strong></td>
-</tr>
-<tr><input type="hidden" name="sida" value="<? echo $GET_[sida]; ?>">
-<td width="78">Anv&auml;ndare</td>
-<td width="6">:</td>
-<td width="294"><input name="user" type="text" id="user"></td>
-</tr>
-<tr>
-<td>L&ouml;senord</td>
-<td>:</td>
-<td><input name="pass" type="password" id="pass"></td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><input type="submit" name="Submit" value="Logga in"></td>
-</tr>
-</table>
-</td>
-</form>
-</tr>
-</table>
+<script> window.alert("Fel lösenord eller användarnamn!");
+        window.location = "login.php" </script>
 ';
 }
 

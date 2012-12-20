@@ -59,6 +59,7 @@ if($submit) {
         <table class=border>
         <tr>
             <th>Namn</th>
+            <th>Ta bort</th>
         </tr>
         ';
         while ($row = mysql_fetch_array($result)) {
@@ -74,8 +75,6 @@ if($submit) {
     }
     echo '
         </table>
-        <P>
-        <table border=0 class="without">
         <form method="post" action="'.$PHP_SELF.'" id="form">
         ';
     if($id) {
@@ -92,10 +91,10 @@ if($submit) {
     }
     echo '
         
-        <tr><td class="without">Namn:</td><td class="without"><input type="text" name="name" id="name" value="'.$name.'" autofocus/></td>
-        <tr><td class="without">Lösenord:</td><td class="without"><input type="password" name="password" id="password"/></td>
-        <tr><td class="without">Bekräfta lösenord:</td><td class="without"><input type="password" name="password1" id="password1" oninput="check(this)"/></td>
-        <tr><td class="without"><input type="submit" name="submit" value="Enter"></td></tr>
+        <label>Namn:</label><input type="text" name="name" id="name" value="'.$name.'" autofocus/>
+        <label>Lösenord:</label><input type="password" name="password" id="password"/>
+        <label>Bekräfta lösenord:</label><input type="password" name="password1" id="password1" oninput="check(this)"/>
+        <label><input type="submit" name="submit" value="Enter">
         <script>
             function check(input) {
               if (input.value != document.getElementById("password").value) {
@@ -107,7 +106,6 @@ if($submit) {
             }
         </script>
         </form>
-        </table>
         ';
 }
 

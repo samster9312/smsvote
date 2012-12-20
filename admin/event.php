@@ -84,8 +84,6 @@ if($submit) {
     }
     echo '
         </table>
-        <P>
-        <table border=0 class="without">
         <form method="post" action="'.$PHP_SELF.'" id="form">
         ';
     if($id) {
@@ -106,15 +104,14 @@ if($submit) {
     }
     echo '
         
-        <tr><td class="without">Namn:</td><td class="without"><input type="text" name="name" id="name" value="'.$name.'" autofocus  required/></td>
-        <tr><td class="without">Identitet:</td><td class="without"><input type="text" name="identity" id="identity" value="'.$identity.'"  required/></td>
-        <tr><td class="without">Startdatum:</td><td class="without"><input type="date" name="startdate" id="startdate" value="'.$startdate.'"/></td>
-        <tr><td class="without">Starttid:</td><td class="without"><input type="time" name="starttime" id="starttime" value="'.$starttime.'"/></td>
-        <tr><td class="without">Slutdatum:</td><td class="without"><input type="date" name="enddate" id="enddate" value="'.$enddate.'"/></td>
-        <tr><td class="without">Sluttid:</td><td class="without"><input type="time" name="endtime" id="endtime" value="'.$endtime.'"/></td>
-        <tr><td class="without"><input type="submit" name="submit" value="Enter"></td></tr>
+        <label for="name">Namn:</label><input type="text" name="name" id="name" value="'.$name.'" autofocus  required/>
+        <label>Identitet:</label><input type="text" name="identity" id="identity" value="'.$identity.'"  required/>
+        <label>Startdatum:</label><input type="date" name="startdate" id="startdate" value="'.$startdate.'"/>
+        <label>Starttid:</label><input type="time" name="starttime" id="starttime" value="'.$starttime.'"/>
+        <label>Slutdatum:</label><input type="date" name="enddate" id="enddate" value="'.$enddate.'"/>
+        <label>Sluttid:</label><input type="time" name="endtime" id="endtime" value="'.$endtime.'"/>
+        <label><input type="submit" name="submit" value="Enter">
         </form>
-        </table>
         ';
 }
 

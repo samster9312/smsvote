@@ -13,16 +13,9 @@
     You should have received a copy of the GNU General Public License
     along with smsvote.  If not, see <http://www.gnu.org/licenses/>.-->
 <?php
-//Kolla om användaren är inloggad
+//Logga ut
 session_start();
-if(!session_is_registered(user)){
-    //Om användaren inte är inloggad skicka användaren till inloggningssidan
-header("location: login.php");
-}
-require_once '../config/include.php';
+session_destroy();
+//Omdirigera till startsidan
+header("location:index.php");
 ?>
-<a href="event.php">Event</a>
-<br>
-<a href="team.php">Team</a>
-<br>
-<a href="admin.php">Användare</a>
