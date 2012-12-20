@@ -30,13 +30,32 @@ root {
 }
 table
 {
+    border-style: groove;
     margin-left:auto; 
     margin-right:auto;
     border-collapse:collapse;
 }
-table, th, td {
-    border: 2px solid black;
+table.without, td.without{
+    border: 0px;
 }
+.border tr:hover td
+{
+        height: 40px;  
+        background : #464646;  
+        background : -webkit-gradient(linear, left top, left bottom, from(rgb(168,168,168)), to(rgb(69,69,69)));  
+        background : -moz-linear-gradient(top, rgb(168,168,168), rgb(69,69,69));  
+        background-image: -o-linear-gradient(rgb(168,168,168),rgb(69,69,69));
+        border-top: 2px solid #939393;  
+        position: relative;  
+        margin-bottom: 30px; 
+color: #ffffff;
+}
+
+table.border, th, td{
+    
+    border: 2px groove black;
+}
+
 td,th {
     text-align:center;
     padding:15px;

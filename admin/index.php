@@ -11,11 +11,17 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with opensmsvote.  If not, see <http://www.gnu.org/licenses/>.-->
+    along with smsvote.  If not, see <http://www.gnu.org/licenses/>.-->
 <?php
-echo '<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >';
-echo '<META HTTP-EQUIV="Content-Language" Content="sv">';
-require_once 'connect.php';
-echo ' <LINK href="../style/main.css" rel="stylesheet" type="text/css">';
-
+//Kolla om användaren är inloggad
+session_start();
+if(!session_is_registered(user)){
+    //Om användaren inte är inloggad skicka användaren till inloggningssidan
+header("location: login.php");
+}
 ?>
+<a href="event.php">Event</a>
+<br>
+<a href="team.php">Team</a>
+<br>
+<a href="admin.php">Användare</a>
