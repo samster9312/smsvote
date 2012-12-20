@@ -32,6 +32,7 @@ echo '<table class="table">
     <th>Uppf&ouml;rd av</th>
     <th>Antal r&ouml;ster</th>
     <th>Andel av r&ouml;sterna</th>
+    <th></th>
     </tr>';
 while($row = mysql_fetch_array($list2))
   {
@@ -39,11 +40,13 @@ while($row = mysql_fetch_array($list2))
     $result = mysql_query($query2);
     $num_rows = mysql_num_rows($result);
     $percent = ($num_rows/$total)*100;
+    $percent = number_format($percent, '2');
     echo "<tr>";
     echo "<td>" . $row['name'] . "</td>";
     echo "<td>" . $row['people'] . "</td>";
     echo "<td>" . $num_rows . "</td>";
-        echo "<td>" . $percent . "&#37;</td>";
+    echo "<td>" . $percent . "&#37;</td>";
+    echo "<td><meter min='0' max='100' value='".$percent."'></td>";
     echo "</tr>";
 }
 echo "<tr><td colspan=4>Totalt ";

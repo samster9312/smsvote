@@ -61,6 +61,7 @@ if($submit) {
             <th>Tid</th>
             <th>Personer</th>
             <th>Event</th>
+            <th>Ta bort</th>
         </tr>
         ';
         while ($row = mysql_fetch_array($result)) {
@@ -102,7 +103,8 @@ if($submit) {
         <label>Namn:</label><input type="text" name="name" id="name" value="'.$name.'" autofocus required/>
         <label>Värde:</label><input type="text" name="value" id="value" value="'.$value.'" required/>
         <label>Personer:</label><input type="date" name="people" id="people" value="'.$people.'"/>
-        <label>Event:</label><select name="eventID"';
+        <label>Event:</label><select name="eventID"
+        <option value="">Välj ett event</option>';  
         while($nt=mysql_fetch_array($resEvent)){
             if ($row['eventID']==$nt[eventID])
             echo "<option value=$nt[eventID] selected>$nt[name]</option>";
